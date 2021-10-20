@@ -1,4 +1,4 @@
-import requests
+import pip._vendor.requests
 import json
 api_key='pfMb9y5mDNML68G-FPoXUNIFOfld8FcVEUiytLyAtlasz_csKKBPUtL7ykVND7LN9a_AyAuU_OfsDuVpZcwcuMZoNzoVPmIF7n3ZYto7Z-0ewU5zN0-7teSTvvdvYXYx'
 headers = {'Authorization': 'Bearer %s' % api_key}
