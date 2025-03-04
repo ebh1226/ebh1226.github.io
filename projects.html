@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Mileage Calculator</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="css/bootstrap-social.css"> -->
+
+
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+  
+    <!-- JUMBOTRON -->
+    <div class="jumbotron">
+      <div class="container text-center">
+        <h1>Mileage Calculator</h1>
+    </div><!--End Jumbotron-->
+  
+  <!--   
+    <section>
+      <div class="well">
+        <div class="container text-center">
+          <h3>Subscribe for more free stuff</h3>
+           <p>Please enter your name and email</p>
+           <form action="" class="form-inline">
+             <div class="form-group">
+              <label for="subscription">Subscribe</label>
+              <input type="text" class="form-control" placeholder="your name" id="subscription">
+            </div>
+             <div class="form-group">
+              <label for="email">   Email Address</label>
+              <input type="email" class="form-control" placeholder="your email" id="email">
+              <button type="submit" class="btn btn-warning">Subscribe</button>
+            </div>
+           </form>
+           <hr> 
+        </div>
+      </div>< -->
+    </section>
+
+    </section>
+  </div>
+    <br><br>
+
+
+    <!-- Form - THIS IS THE MAIN COMPONENT-->
+    <div class="container" id="contact-us">
+      <h2>Calculate Your Average Pace</h2>
+
+ <!--code taken from: https://www.geeksforgeeks.org/html-calculator/-->
+<body>
+    <table id="calcu">
+        <tr>
+            <td colspan="3"><input type="text" name="Time" id="Length of Run">Type the Length (minutes) of your Run</td>
+        </tr>
+        <tr>
+          <td><input type="text" name="Number" id="Number of Miles">Type the Number of Miles you Ran</td>
+      </tr>
+        <tr>
+            <!-- solve function call function solve to evaluate value -->
+            <td><input type="button" id="solve" value="=" onclick="solve()"> <input type="button" id="clear" value="c" onclick="clr()" /> </td>
+        </tr>
+      <tr>
+            <td><input type="text" id="result">Result</td>
+        </tr>
+    </table>
+  <br/>
+  
+  <h2>Calculate Your What Your Calories Burned will Be</h2>
+
+<body>
+    <table id="calories">
+        <tr>
+            <td colspan="3"><input type="text" id="mins">Length (minutes) of your Run</td>
+        </tr>
+        <tr>
+          <td><input type="text" id="pace">Pace (MPH)</td>
+      </tr>
+      <tr>
+          <td><input type="text" id="weight">Weight in Pounds</td>
+      </tr>
+        <tr>
+            <!-- solve function call function solve to evaluate value -->
+            <td><input type="button" id="calculation" value="Calculate" onclick="calculate()"></td>
+        </tr>
+      <tr>
+            <td><input type="text" id="myResult">Result</td>
+        </tr>
+    </table>
+  <br/>
+  
+  <h2>Convert Miles to Kilometers</h2>
+    <table cellspacing=0 cellpadding=5 border=0>
+
+    <tr>
+     <td><b>Miles:</b> <input type="text"  id="M" size=6></td>
+     <td>&lt;-----></td>
+     <td><b>Kilometers:</b> <input type="text"  id="K" size=6></td>
+    </tr>
+      
+  </table>
+  <br/>
+<div class="form-inline">
+   <div class="col-sm-2"><input type="button" id="convert" value="Convert" onclick="convert()"></div>  
+   <div class="col-sm-3"></div>
+</div> 
+  
+  <br/>
+  
+  <h2>Convert Kilometers to Miles</h2>
+    <table cellspacing=0 cellpadding=5 border=0>
+
+    <tr>
+     <td><b>Kilometers:</b> <input type="text"  id="Kilo" size=6></td>
+     <td>&lt;-----></td>
+     <td><b>Miles:</b> <input type="text"  id="Mile" size=6></td>
+    </tr>
+      
+  </table>
+  <br/>
+<div class="form-inline">
+   <div class="col-sm-2"><input type="button" id="convert2" value="Convert" onclick="convert2()"></div>  
+   <div class="col-sm-3"></div>
+</div> 
+  
+    <script>
+        // Function that display value
+        function dis(val) {
+            document.getElementById("result").value += val
+        }
+  
+        var cal = document.getElementById("calcu");
+        cal.onkeyup = function (event) {
+            if (event.keyCode === 13) {
+                console.log("Enter");
+                let x = document.getElementById("result").value
+                console.log(x);
+                solve();
+            }
+        }
+      
+        // Function that evaluates the digit and return result
+        function convert() {
+            let x = document.getElementById("M").value
+            let y = x*1.609
+            document.getElementById("K").value = y
+        }
+      
+      // Function that evaluates the digit and return result
+        function convert2() {
+            let x = document.getElementById("Kilo").value
+            let y = x/1.609
+            document.getElementById("Mile").value = y
+        }
+      
+      // Function that evaluates the digit and return result
+        function calculate() {
+            let x = document.getElementById("mins").value
+            let y = document.getElementById("pace").value
+            let z = document.getElementById("weight").value
+            let a = y * 1.64 * 3.5
+            let b = (z/2.205)/200
+            let c = a * b
+            let d = c*x
+            if(x < 0 || y < 0 || z < 0){
+              document.getElementById("myResult").value = "NaN"
+            }else{
+              document.getElementById("myResult").value = d
+            }
+        }
+  
+        // Function that evaluates the digit and return result
+        function solve() {
+            let x = document.getElementById("Length of Run").value
+            let z = document.getElementById("Number of Miles").value
+            let y = x/z
+            document.getElementById("result").value = y
+        }
+  
+        // Function that clear the display
+        function clr() {
+            document.getElementById("Length of Run").value = ""
+            document.getElementById("Number of Miles").value = ""
+        }
+    </script>
+  </div>
+
+    <!-- Modal -->
+    <div class="container">
+      <div class="modal" id="modal-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <header class="modal-header">
+              <button type="button" class='close' data-dismiss='modal'>&times;</button>
+              <h3 class="modal-heading">Form Submittion</h3>
+            </header>
+            <div class="modal-body"><h3>Are You sure you want to submit the form?</h3></div>
+            <div class="modal-footer">
+              <a href="#" class="btn btn-info">Yes</a>
+              <a href="#" class="btn btn-danger">No</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
