@@ -1,3 +1,20 @@
+/* General Styles */
+body { 
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+/* Card Styling */
+.w3-card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  background-color: white;
+  border-radius: 8px;
+  margin: 10px;
+}
+
 /* Global styling for image uniformity */
 .w3-row-padding img {
   width: 100%;           /* Makes images take up full width of their container */
@@ -5,6 +22,27 @@
   object-fit: cover;     /* Prevents stretching and ensures images fill the space */
   border-radius: 10px;   /* Optional: Adds smooth rounded corners for a cleaner look */
   aspect-ratio: 1 / 1;   /* Ensures images maintain a square shape */
+}
+
+/* Ensures all images follow uniform styling */
+img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Specific Image Styling for Cards */
+.w3-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Responsive Image Styling */
+.w3-image {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
 }
 
 /* Center the three-column layout */
@@ -32,4 +70,18 @@
   .w3-col {
     max-width: 100%; /* Makes images stack in one column for small screens */
   }
+}
+
+/* Button Styling */
+.w3-button {
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.w3-button:hover {
+  background-color: #0056b3;
 }
