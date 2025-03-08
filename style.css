@@ -1,7 +1,35 @@
-/* Global image styling to make all photos uniform */
+/* Global styling for image uniformity */
 .w3-row-padding img {
-  height: 200px; /* Adjust to your preferred size */
-  object-fit: cover; /* Makes sure images fill their container without stretching */
-  width: 100%; /* Ensures all images stretch across their column width */
-  border-radius: 10px; /* Optional: makes the photos have rounded corners */
+  width: 100%;           /* Makes images take up full width of their container */
+  height: 200px;         /* Ensures all images have the same height */
+  object-fit: cover;     /* Prevents stretching and ensures images fill the space */
+  border-radius: 10px;   /* Optional: Adds smooth rounded corners for a cleaner look */
+  aspect-ratio: 1 / 1;   /* Ensures images maintain a square shape */
+}
+
+/* Center the three-column layout */
+.w3-row-padding {
+  display: flex;
+  justify-content: center; /* Centers the columns */
+  flex-wrap: wrap;         /* Ensures responsiveness */
+  gap: 16px;               /* Adds spacing between items */
+}
+
+/* Ensures columns are evenly spaced */
+.w3-col {
+  flex: 1;                 /* Makes all columns take equal space */
+  max-width: 30%;          /* Prevents images from getting too big */
+}
+
+/* Adjust column width for smaller screens */
+@media screen and (max-width: 768px) {
+  .w3-col {
+    max-width: 48%; /* Makes two columns per row on smaller screens */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .w3-col {
+    max-width: 100%; /* Makes images stack in one column for small screens */
+  }
 }
