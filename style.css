@@ -1,0 +1,7 @@
+/* Global image styling to make all photos uniform */
+.w3-row-padding img {
+  height: 200px; /* Adjust to your preferred size */
+  object-fit: cover; /* Makes sure images fill their container without stretching */
+  width: 100%; /* Ensures all images stretch across their column width */
+  border-radius: 10px; /* Optional: makes the photos have rounded corners */
+}
