@@ -1,6 +1,6 @@
 .circular-img {
-  width: 50px; /* Adjust size as needed */
-  height: 50px; /* Must be equal to width for a perfect circle */
+  width: 100px; /* Adjust size as needed */
+  height: 100px; /* Must be equal to width for a perfect circle */
   border-radius: 50%; /* Makes it circular */
   object-fit: cover; /* Ensures it crops instead of stretching */
 }
