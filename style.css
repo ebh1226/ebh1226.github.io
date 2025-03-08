@@ -17,7 +17,7 @@
 }
 
 /* Ensures all images follow uniform styling */
-img {
+.gallery img {
   width: 100%;
   height: auto;
   object-fit: cover;
