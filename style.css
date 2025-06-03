@@ -4,3 +4,29 @@
   border-radius: 50%; /* Makes it circular */
   object-fit: cover; /* Ensures it crops instead of stretching */
 }
+
+/* Target the Tech Talk row and make it a flex container */
+#tech .w3-row-padding {
+  display: flex;
+  flex-wrap: wrap; /* so cards wrap to a new line if there isn’t room */
+}
+
+/* Make each .w3-col a flex item and let its .w3-card stretch */
+#tech .w3-col {
+  display: flex;
+  /* optional: you can add width: 25% for large screens if you want exactly four per row,
+     but W3.CSS’s l3 class already does that (l3 = 25% on large). */
+}
+
+/* Turn the card itself into a column‐flex container so its inner parts can stretch */
+#tech .w3-card {
+  display: flex;
+  flex-direction: column;
+  flex: 1;           /* take up all available vertical space in its column */
+}
+
+/* Allow the container inside the card to grow and push “Learn more” to the bottom */
+#tech .w3-card .w3-container {
+  flex: 1;
+}
+
